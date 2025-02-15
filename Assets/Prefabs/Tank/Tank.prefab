@@ -88,6 +88,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7536172099127125300}
+  childs:
+  - {fileID: 748660324512559163}
+  - {fileID: 748660324512559165}
+  - {fileID: 748660324512559155}
+  - {fileID: 748660324512559161}
 --- !u!54 &7536172099127125300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,3 +141,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8082676, y: 1.9784291, z: 2.4633894}
   m_Center: {x: -0.004254043, y: 0.9231268, z: -0.07657266}
+--- !u!23 &748660324512559155 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300008, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 748660324510263387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &748660324512559161 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300002, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 748660324510263387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &748660324512559163 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 748660324510263387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &748660324512559165 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300006, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 748660324510263387}
+  m_PrefabAsset: {fileID: 0}
