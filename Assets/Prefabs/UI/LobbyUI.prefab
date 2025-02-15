@@ -660,7 +660,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4949748614562531605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 728418346334252860}
+        m_TargetAssemblyTypeName: TankSelectionUI, Assembly-CSharp
+        m_MethodName: GreenTankSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6164286697351376709
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +901,7 @@ GameObject:
   - component: {fileID: 5264294585546715708}
   - component: {fileID: 5979159299005214370}
   - component: {fileID: 2728736585901451810}
+  - component: {fileID: 728418346334252860}
   m_Layer: 5
   m_Name: LobbyUI
   m_TagString: Untagged
@@ -1075,6 +1088,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &728418346334252860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505247918622649244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34082f5bf5a06ae479c3de452e1b90b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7759728618854351645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1220,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7525558935314163735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 728418346334252860}
+        m_TargetAssemblyTypeName: TankSelectionUI, Assembly-CSharp
+        m_MethodName: RedTankSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8037057932117163502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1353,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6654742774835067672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 728418346334252860}
+        m_TargetAssemblyTypeName: TankSelectionUI, Assembly-CSharp
+        m_MethodName: BlueTankSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8899800400677035317
 GameObject:
   m_ObjectHideFlags: 0
