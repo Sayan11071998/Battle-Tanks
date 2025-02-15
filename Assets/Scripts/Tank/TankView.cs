@@ -16,12 +16,12 @@ public class TankView : MonoBehaviour
 
         if (movement != 0)
         {
-            tankController.Move(movement, 30);
+            tankController.Move(movement, tankController.GetTankModel().movementSpeed);
         }
 
         if (rotation != 0)
         {
-            tankController.Rotate(rotation, 20);
+            tankController.Rotate(rotation, tankController.GetTankModel().rotationSpeed);
         }
     }
 
