@@ -163,9 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 601854726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66efc0078156eef45b9372e4cba5d229, type: 3}
+  m_Script: {fileID: 11500000, guid: 79c09f9b9c92e504d918841412edf850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tankPrefab: {fileID: 0}
 --- !u!1 &1179543937
 GameObject:
   m_ObjectHideFlags: 0
