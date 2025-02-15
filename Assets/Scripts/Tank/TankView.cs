@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TankView : MonoBehaviour
@@ -9,6 +7,13 @@ public class TankView : MonoBehaviour
 
     private float movement;
     private float rotation;
+
+    private void Start()
+    {
+        GameObject cam = GameObject.Find("Main Camera");
+        cam.transform.SetParent(transform);
+        cam.transform.position = new Vector3(0f, 3f, -5f);
+    }
 
     private void Update()
     {
