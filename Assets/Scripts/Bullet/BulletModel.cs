@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletModel : MonoBehaviour
+public class BulletModel
 {
-    // Start is called before the first frame update
-    void Start()
+    private BulletController bulletController;
+
+    public float speed;
+    public Material color;
+
+    public BulletModel(float _speed, Material _color)
     {
-        
+        speed = _speed;
+        color = _color;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetBulletController(BulletController _bulletController)
     {
-        
+        bulletController = _bulletController;
     }
 }

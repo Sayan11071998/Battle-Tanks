@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class BulletController
 {
-    // Start is called before the first frame update
-    void Start()
+    private BulletModel bulletModel;
+    private BulletView bulletView;
+
+    public BulletController(BulletModel _bulletModel, BulletView _bulletView)
     {
-        
+        bulletModel = _bulletModel;
+        bulletView = GameObject.Instantiate<BulletView>(_bulletView);
+
+        bulletModel.SetBulletController(this);
+        bulletView.SetBulletController(this);
+
+        bulletView.ChangeColor(bulletModel.color);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(Vector3 position, Vector3 direction)
     {
-        
+        bulletView.transform.position = position;
+        bulletView.rb.velocity = direction * bulletModel.speed;
+    }
+
+    public void OnCollision(Collision collision)
+    {
+        GameObject.Destroy(bulletView.gameObject);
     }
 }

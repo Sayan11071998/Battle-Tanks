@@ -5,6 +5,7 @@ public class TankView : MonoBehaviour
     private TankController tankController;
     public Rigidbody rb;
     public MeshRenderer[] childs;
+    public Transform bulletSpawnPoint;
 
     private float movement;
     private float rotation;
@@ -53,5 +54,10 @@ public class TankView : MonoBehaviour
     public Rigidbody GetRigidbody()
     {
         return rb;
+    }
+
+    public Transform GetBulletSpawnPoint()
+    {
+        return bulletSpawnPoint;
     }
 }

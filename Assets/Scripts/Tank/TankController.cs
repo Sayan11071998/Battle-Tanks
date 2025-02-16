@@ -5,16 +5,19 @@ public class TankController
     private TankModel tankModel;
     private TankView tankView;
     private Rigidbody rb;
+    private BulletSpawner bulletSpawner;
 
-    public TankController(TankModel _tankModel, TankView _tankView)
+    public TankController(TankModel _tankModel, TankView _tankView, BulletSpawner _bulletSpawner)
     {
         tankModel = _tankModel;
         tankView = GameObject.Instantiate<TankView>(_tankView);
+        bulletSpawner = _bulletSpawner;
 
         rb = tankView.GetRigidbody();
 
         tankModel.SetTankController(this);
         tankView.SetTankController(this);
+        bulletSpawner.SetTankController(this);
 
         tankView.ChangeColor(tankModel.color);
     }
@@ -34,5 +37,10 @@ public class TankController
     public TankModel GetTankModel()
     {
         return tankModel;
+    }
+
+    public TankView GetTankView()
+    {
+        return tankView;
     }
 }

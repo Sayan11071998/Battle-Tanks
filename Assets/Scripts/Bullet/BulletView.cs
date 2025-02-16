@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private BulletController bulletController;
+    public Rigidbody rb;
+    public MeshRenderer meshRenderer;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        bulletController.OnCollision(collision);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeColor(Material color)
     {
-        
+        meshRenderer.material = color;
+    }
+
+    public void SetBulletController(BulletController _bulletController)
+    {
+        bulletController = _bulletController;
     }
 }
