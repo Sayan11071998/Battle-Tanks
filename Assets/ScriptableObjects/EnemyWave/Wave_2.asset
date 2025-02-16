@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9567165e996b6b42a4c60538fa06d0a, type: 3}
+  m_Name: Wave_2
+  m_EditorClassIdentifier: 
+  enemyTanks:
+  - {fileID: 11400000, guid: d2d48fdd10a4e4a438dbf4b1066068a5, type: 2}
+  - {fileID: 11400000, guid: d2d48fdd10a4e4a438dbf4b1066068a5, type: 2}
+  - {fileID: 11400000, guid: d2d48fdd10a4e4a438dbf4b1066068a5, type: 2}
+  - {fileID: 11400000, guid: 2eacfba37c792b14ca11c60f987574f2, type: 2}
+  - {fileID: 11400000, guid: 2eacfba37c792b14ca11c60f987574f2, type: 2}
+  isBossWave: 0
