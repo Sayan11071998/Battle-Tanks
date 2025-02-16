@@ -14,6 +14,7 @@ public class BulletController
         bulletView.SetBulletController(this);
 
         bulletView.ChangeColor(bulletModel.color);
+        GameObject.Destroy(bulletView.gameObject, bulletModel.lifeTime);
     }
 
     public void Move(Vector3 position, Vector3 direction)

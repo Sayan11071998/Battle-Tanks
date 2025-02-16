@@ -6,12 +6,26 @@ public class BulletSpawner : MonoBehaviour
     private TankController tankController;
 
     [SerializeField] private float bulletSpeed = 15f;
+    [SerializeField] private float bulletLifetime = 3f;
+    [SerializeField] private float fireRate = 0.5f;
+
+    private float lastFireTime = 0f;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // SpawnBullet();
+            TryFireBullet();
+        }
+    }
+
+    private void TryFireBullet()
+    {
+        if (Time.time - lastFireTime >= fireRate)
+        {
             SpawnBullet();
+            lastFireTime = Time.time;
         }
     }
 
@@ -20,7 +34,7 @@ public class BulletSpawner : MonoBehaviour
         if (tankController != null)
         {
             TankModel tankModel = tankController.GetTankModel();
-            BulletModel bulletModel = new BulletModel(bulletSpeed, tankModel.color);
+            BulletModel bulletModel = new BulletModel(bulletSpeed, tankModel.color, bulletLifetime);
             BulletController bulletController = new BulletController(bulletModel, bulletPrefab);
 
             Transform spawnPoint = tankController.GetTankView().GetBulletSpawnPoint();
