@@ -9,6 +9,9 @@ public class EnemyController
     private float lastFireTime = 0f;
     private NavMeshAgent navMeshAgent;
 
+    public delegate void EnemyDestroyedEvent(EnemyController enemy);
+    public event EnemyDestroyedEvent OnEnemyDestroyed;
+
     public EnemyController(EnemyModel _enemyModel, EnemyView _enemyView, Transform _playerTransform)
     {
         enemyModel = _enemyModel;
@@ -72,6 +75,20 @@ public class EnemyController
         BulletController bulletController = new BulletController(bulletModel, enemyView.GetBulletPrefab());
 
         bulletController.Move(spawnPosition, spawnDirection);
+    }
+
+    public void DestroyEnemy()
+    {
+        OnEnemyDestroyed?.Invoke(this);
+        GameObject.Destroy(enemyView.gameObject);
+    }
+
+    public void OnCollision(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            DestroyEnemy();
+        }
     }
 
     public void SetPlayerTransform(Transform _playerTransform)
