@@ -67,9 +67,5 @@ public class TankSpawner : MonoBehaviour
         {
             enemyWaveManager.SetPlayerController(tankController);
         }
-        else
-        {
-            Debug.LogError("TankController or EnemyWaveManager is not assigned!");
-        }
     }
 }

@@ -14,13 +14,10 @@ public class EnemyController
         enemyModel = _enemyModel;
         enemyView = GameObject.Instantiate<EnemyView>(_enemyView);
         playerTransform = _playerTransform;
+
         navMeshAgent = enemyView.GetComponent<NavMeshAgent>();
 
-        if (navMeshAgent == null)
-        {
-            Debug.LogError("NavMeshAgent component is missing on the enemy prefab!");
-            return;
-        }
+        if (navMeshAgent == null) return;
 
         navMeshAgent.speed = enemyModel.speed;
         navMeshAgent.acceleration = 100f;
@@ -45,14 +42,6 @@ public class EnemyController
         if (playerTransform == null || navMeshAgent == null) return;
 
         navMeshAgent.SetDestination(playerTransform.position);
-
-        // Vector3 direction = (playerTransform.position - enemyView.transform.position).normalized;
-        // direction.y = 0;
-
-        // enemyView.GetRigidbody().velocity = direction * enemyModel.speed;
-
-        // Quaternion targetRotation = Quaternion.LookRotation(direction);
-        // enemyView.transform.rotation = Quaternion.Slerp(enemyView.transform.rotation, targetRotation, Time.deltaTime * 5f);
     }
 
     private void TryFireAtPlayer()
