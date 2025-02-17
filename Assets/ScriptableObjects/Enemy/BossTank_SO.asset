@@ -16,5 +16,5 @@ MonoBehaviour:
   color: {fileID: 2100000, guid: b3a1f2f69b4c3a84cba5446e31e87c20, type: 2}
   health: 500
   firePower: 50
-  speed: 30
+  speed: 2
   fireRate: 2

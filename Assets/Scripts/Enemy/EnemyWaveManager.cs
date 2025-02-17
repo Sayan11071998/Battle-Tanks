@@ -8,13 +8,28 @@ public class EnemyWaveManager : MonoBehaviour
     public EnemyView enemyPrefab;
     public Transform[] spawnPoints;
     public float waveDelay = 5f;
-    public Transform playerTransform;
+    public TankController playerController;
     private List<EnemyController> activeEnemies = new List<EnemyController>();
 
     private int currentWaveIndex = 0;
 
-    void Start()
+    // void Start()
+    // {
+    //     if (playerController != null)
+    //     {
+    //         StartCoroutine(SpawnWaves());
+    //     }
+    //     else
+    //     {
+    //         Debug.LogError("PlayerController is not assigned to EnemyWaveManager!");
+    //     }
+
+    //     // StartCoroutine(SpawnWaves());
+    // }
+
+    public void SetPlayerController(TankController _playerController)
     {
+        playerController = _playerController;
         StartCoroutine(SpawnWaves());
     }
 
@@ -39,8 +54,14 @@ public class EnemyWaveManager : MonoBehaviour
 
     private void SpawnEnemy(EnemyTankData data, Transform spawnPoint)
     {
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerController is not assigned!");
+            return;
+        }
+
         EnemyModel enemyModel = new EnemyModel(data);
-        EnemyController enemyController = new EnemyController(enemyModel, enemyPrefab, playerTransform);
+        EnemyController enemyController = new EnemyController(enemyModel, enemyPrefab, playerController.GetTankView().transform);
 
         enemyController.GetEnemyView().transform.position = spawnPoint.position;
 
@@ -49,8 +70,11 @@ public class EnemyWaveManager : MonoBehaviour
 
     void Update()
     {
+        if (playerController == null) return;
+
         foreach (var enemyController in activeEnemies)
         {
+            enemyController.SetPlayerTransform(playerController.GetTankView().transform);
             enemyController.Update();
         }
     }

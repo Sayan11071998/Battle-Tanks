@@ -17,9 +17,12 @@ public class TankSpawner : MonoBehaviour
     public List<Tank> tankList;
     public TankView tankView;
     public BulletSpawner bulletSpawner;
+    public EnemyWaveManager enemyWaveManager;
 
     public void CreateTank(TankTypes tankType)
     {
+        TankController tankController = null;
+
         if (tankType == TankTypes.GreenTank)
         {
             TankModel tankModel = new TankModel
@@ -31,7 +34,7 @@ public class TankSpawner : MonoBehaviour
                 tankList[0].health,
                 tankList[0].firePower
             );
-            TankController tankController = new TankController(tankModel, tankView, bulletSpawner);
+            tankController = new TankController(tankModel, tankView, bulletSpawner);
         }
         else if (tankType == TankTypes.BlueTank)
         {
@@ -44,7 +47,7 @@ public class TankSpawner : MonoBehaviour
                 tankList[1].health,
                 tankList[1].firePower
             );
-            TankController tankController = new TankController(tankModel, tankView, bulletSpawner);
+            tankController = new TankController(tankModel, tankView, bulletSpawner);
         }
         else if (tankType == TankTypes.RedTank)
         {
@@ -57,7 +60,16 @@ public class TankSpawner : MonoBehaviour
                 tankList[2].health,
                 tankList[2].firePower
             );
-            TankController tankController = new TankController(tankModel, tankView, bulletSpawner);
+            tankController = new TankController(tankModel, tankView, bulletSpawner);
+        }
+
+        if (tankController != null && enemyWaveManager != null)
+        {
+            enemyWaveManager.SetPlayerController(tankController);
+        }
+        else
+        {
+            Debug.LogError("TankController or EnemyWaveManager is not assigned!");
         }
     }
 }
