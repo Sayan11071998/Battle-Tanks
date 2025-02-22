@@ -23,7 +23,7 @@ public class TankSpawner : MonoBehaviour
     //     CreateTank();
     // }
 
-    private void CreateTank(TankType tankType)
+    public void CreateTank(TankType tankType)
     {
         int index = (int)tankType;
         TankModel tankModel = new TankModel
