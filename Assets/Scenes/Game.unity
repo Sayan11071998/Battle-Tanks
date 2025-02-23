@@ -122,6 +122,96 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &209919911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209919912}
+  - component: {fileID: 209919913}
+  - component: {fileID: 209919914}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209919912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209919911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.84, y: 0, z: 39.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209919913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209919911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090b6ba58e9d8ca46b9050d0fa1c021e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTankViewPrefab: {fileID: 1746015458021791716, guid: f97c975737b2bc944a4960ae88de2b18,
+    type: 3}
+  playerTransform: {fileID: 748660324510134955, guid: 1e1d0eba007f0e24494652f0ca470c09,
+    type: 3}
+  enemyTankList:
+  - health: 200
+    movementSpeed: 2
+    rotationSpeed: 50
+    tankType: 0
+    color: {fileID: 2100000, guid: 6221f2fbc7212d94cb9c069ee262d824, type: 2}
+    bulletSpeed: 30
+    bulletDamage: 100
+    bulletExplosionRadius: 0
+    fireRate: 1
+  - health: 50
+    movementSpeed: 8
+    rotationSpeed: 150
+    tankType: 1
+    color: {fileID: 2100000, guid: 65b34bd0b696fd64c809daa8ff1aac63, type: 2}
+    bulletSpeed: 15
+    bulletDamage: 20
+    bulletExplosionRadius: 0
+    fireRate: 4
+  - health: 100
+    movementSpeed: 4
+    rotationSpeed: 80
+    tankType: 2
+    color: {fileID: 2100000, guid: b3a1f2f69b4c3a84cba5446e31e87c20, type: 2}
+    bulletSpeed: 20
+    bulletDamage: 50
+    bulletExplosionRadius: 5
+    fireRate: 0.5
+--- !u!114 &209919914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209919911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bd29e51dd6f0c4e80a7f3e871f4fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 209919913}
 --- !u!1 &529471349
 GameObject:
   m_ObjectHideFlags: 3
@@ -907,3 +997,4 @@ SceneRoots:
   - {fileID: 7895255307341646622}
   - {fileID: 1832791340}
   - {fileID: 883965630}
+  - {fileID: 209919912}
