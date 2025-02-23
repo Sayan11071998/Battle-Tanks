@@ -34,8 +34,5 @@ public class TankController
         rb.MoveRotation(rb.rotation * deltaRotation);
     }
 
-    public TankModel GetTankModel()
-    {
-        return tankModel;
-    }
+    public TankModel GetTankModel() => tankModel;
 }

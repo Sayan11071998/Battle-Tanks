@@ -12,6 +12,7 @@ public class BulletModel
     [SerializeField] private Material material;
     [SerializeField] private float explosionRadius;
     [SerializeField] private Transform target;
+    [SerializeField] private float lifetime;
 
     public BulletModel
     (
@@ -20,6 +21,7 @@ public class BulletModel
         BulletType _bulletType,
         Material _material,
         float _explosionRadius = 0f,
+        float _lifetime = 2f,
         Transform _target = null
     )
     {
@@ -28,6 +30,7 @@ public class BulletModel
         bulletType = _bulletType;
         material = _material;
         explosionRadius = _explosionRadius;
+        lifetime = _lifetime;
         target = _target;
     }
 
@@ -39,4 +42,5 @@ public class BulletModel
     public Material Material => material;
     public float ExplosionRadius => explosionRadius;
     public Transform Target => target;
+    public float Lifetime => lifetime;
 }

@@ -12,12 +12,14 @@ public class BulletSpawner : MonoBehaviour
         [SerializeField] private BulletType bulletType;
         [SerializeField] private Material material;
         [SerializeField] private float explosionRadius;
+        [SerializeField] private float lifetime;
 
         public float Speed => speed;
         public float Damage => damage;
         public BulletType BulletType => bulletType;
         public Material Material => material;
         public float ExplosionRadius => explosionRadius;
+        public float Lifetime => lifetime;
     }
 
     [SerializeField] private BulletView bulletViewPrefab;
@@ -36,6 +38,7 @@ public class BulletSpawner : MonoBehaviour
             bulletList[index].BulletType,
             bulletList[index].Material,
             bulletList[index].ExplosionRadius,
+            bulletList[index].Lifetime,
             target
         );
 
