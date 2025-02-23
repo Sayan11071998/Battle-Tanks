@@ -64,7 +64,7 @@ public class TankView : MonoBehaviour
 
     private Transform FindNearestEnemy()
     {
-        GameObject[] tanks = GameObject.FindGameObjectsWithTag("Tank");
+        GameObject[] tanks = GameObject.FindGameObjectsWithTag("Enemy");
         Transform nearest = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = transform.position;

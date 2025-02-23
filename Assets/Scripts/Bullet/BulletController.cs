@@ -31,9 +31,12 @@ public class BulletController
             case BulletType.GuidedMissile:
                 if (bulletModel.Target != null)
                 {
-                    Vector3 direction = (bulletModel.Target.position - bulletView.transform.position).normalized;
-                    rb.velocity = direction * bulletModel.Speed;
-                    bulletView.transform.rotation = Quaternion.LookRotation(direction);
+                    Vector3 targetPosition = bulletModel.Target.position;
+                    Vector3 currentPosition = bulletView.transform.position;
+                    Vector3 direction = (targetPosition - currentPosition).normalized;
+                    Vector3 newVelocity = Vector3.Lerp(rb.velocity, direction * bulletModel.Speed, 0.1f);
+                    rb.velocity = newVelocity;
+                    bulletView.transform.rotation = Quaternion.LookRotation(newVelocity);
                 }
                 else
                 {
