@@ -7,29 +7,35 @@ public class BulletSpawner : MonoBehaviour
     [System.Serializable]
     public class Bullet
     {
-        public float speed;
-        public float damage;
-        public BulletType bulletType;
-        public Material material;
-        public float explosionRadius;
+        [SerializeField] private float speed;
+        [SerializeField] private float damage;
+        [SerializeField] private BulletType bulletType;
+        [SerializeField] private Material material;
+        [SerializeField] private float explosionRadius;
+
+        public float Speed => speed;
+        public float Damage => damage;
+        public BulletType BulletType => bulletType;
+        public Material Material => material;
+        public float ExplosionRadius => explosionRadius;
     }
 
-    public BulletView bulletViewPrefab;
-    public Transform firePoint;
-    public TankController tankController;
+    [SerializeField] private BulletView bulletViewPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private TankController tankController;
 
-    public Bullet[] bulletList;
+    [SerializeField] private Bullet[] bulletList;
 
     public void SpawnBullet(BulletType bulletType, Transform target = null)
     {
         int index = (int)bulletType;
         BulletModel bulletModel = new BulletModel
         (
-            bulletList[index].speed,
-            bulletList[index].damage,
-            bulletList[index].bulletType,
-            bulletList[index].material,
-            bulletList[index].explosionRadius,
+            bulletList[index].Speed,
+            bulletList[index].Damage,
+            bulletList[index].BulletType,
+            bulletList[index].Material,
+            bulletList[index].ExplosionRadius,
             target
         );
 

@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class TankView : MonoBehaviour
 {
-    private TankController tankController;
-    public Rigidbody rb;
-    public MeshRenderer[] childs;
-    public BulletSpawner bulletSpawner;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private MeshRenderer[] childs;
+    [SerializeField] private BulletSpawner bulletSpawner;
 
+    private TankController tankController;
     private float movementInput;
     private float rotationInput;
     private float shootCooldown;
@@ -48,7 +48,7 @@ public class TankView : MonoBehaviour
     private void Shoot()
     {
         TankModel tankModel = tankController.GetTankModel();
-        switch (tankModel.tanktype)
+        switch (tankModel.TankType)
         {
             case TankType.GreenTank:
                 bulletSpawner.SpawnBullet(BulletType.HighExplosive);

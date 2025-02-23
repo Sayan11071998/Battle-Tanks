@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject mainMenuUI;
-    public TankSpawner spawner;
+    [SerializeField] private GameObject mainMenuUI;
+    [SerializeField] private TankSpawner spawner;
+    
     private TankType selectedType;
 
     private void Start()

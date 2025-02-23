@@ -5,7 +5,8 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    public CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    
     private CinemachineBasicMultiChannelPerlin noise;
 
     public void SetPlayer(Transform player)

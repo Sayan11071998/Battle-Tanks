@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BulletView : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private MeshRenderer renderer;
+
     private BulletController bulletController;
-    public Rigidbody rb;
-    public MeshRenderer renderer;
 
     private void Update() => bulletController.Move();
     private void OnTriggerEnter(Collider other) => bulletController.OnCollision(other);

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool isGamesStart;
+    [SerializeField] private bool isGamesStart;
 
     private void Start()
     {

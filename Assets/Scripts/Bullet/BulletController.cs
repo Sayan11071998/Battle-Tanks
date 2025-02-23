@@ -18,40 +18,40 @@ public class BulletController
         bulletModel.SetBulletController(this);
         bulletView.SetBulletController(this);
 
-        bulletView.ChangeAppearance(bulletModel.material);
+        bulletView.ChangeAppearance(bulletModel.Material);
     }
 
     public void Move()
     {
-        switch (bulletModel.bulletType)
+        switch (bulletModel.BulletType)
         {
             case BulletType.HighExplosive:
-                rb.velocity = bulletView.transform.forward * bulletModel.speed;
+                rb.velocity = bulletView.transform.forward * bulletModel.Speed;
                 break;
             case BulletType.GuidedMissile:
-                if (bulletModel.target != null)
+                if (bulletModel.Target != null)
                 {
-                    Vector3 direction = (bulletModel.target.position - bulletView.transform.position).normalized;
-                    rb.velocity = direction * bulletModel.speed;
+                    Vector3 direction = (bulletModel.Target.position - bulletView.transform.position).normalized;
+                    rb.velocity = direction * bulletModel.Speed;
                     bulletView.transform.rotation = Quaternion.LookRotation(direction);
                 }
                 else
                 {
-                    rb.velocity = bulletView.transform.forward * bulletModel.speed;
+                    rb.velocity = bulletView.transform.forward * bulletModel.Speed;
                 }
                 break;
             case BulletType.ArmorPiercing:
-                rb.velocity = bulletView.transform.forward * bulletModel.speed;
+                rb.velocity = bulletView.transform.forward * bulletModel.Speed;
                 break;
         }
     }
 
     public void OnCollision(Collider other)
     {
-        switch (bulletModel.bulletType)
+        switch (bulletModel.BulletType)
         {
             case BulletType.HighExplosive:
-                Collider[] hitColliders = Physics.OverlapSphere(bulletView.transform.position, bulletModel.explosionRadius);
+                Collider[] hitColliders = Physics.OverlapSphere(bulletView.transform.position, bulletModel.ExplosionRadius);
                 foreach (var hit in hitColliders)
                 {
                     if (hit.CompareTag("Enemy"))

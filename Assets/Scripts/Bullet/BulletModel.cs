@@ -6,12 +6,12 @@ public class BulletModel
 {
     private BulletController bulletController;
 
-    public float speed;
-    public float damage;
-    public BulletType bulletType;
-    public Material material;
-    public float explosionRadius;
-    public Transform target;
+    [SerializeField] private float speed;
+    [SerializeField] private float damage;
+    [SerializeField] private BulletType bulletType;
+    [SerializeField] private Material material;
+    [SerializeField] private float explosionRadius;
+    [SerializeField] private Transform target;
 
     public BulletModel
     (
@@ -33,4 +33,10 @@ public class BulletModel
 
     public void SetBulletController(BulletController _bulletController) => bulletController = _bulletController;
     public BulletController GetBulletController() => bulletController;
+    public float Speed => speed;
+    public float Damage => damage;
+    public BulletType BulletType => bulletType;
+    public Material Material => material;
+    public float ExplosionRadius => explosionRadius;
+    public Transform Target => target;
 }
