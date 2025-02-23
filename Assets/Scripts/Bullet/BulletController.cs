@@ -54,20 +54,20 @@ public class BulletController
                 Collider[] hitColliders = Physics.OverlapSphere(bulletView.transform.position, bulletModel.explosionRadius);
                 foreach (var hit in hitColliders)
                 {
-                    if (hit.CompareTag("Tank"))
+                    if (hit.CompareTag("Enemy"))
                     {
                         Debug.Log("High-Explosive hit: " + hit.name);
                     }
                 }
                 break;
             case BulletType.GuidedMissile:
-                if (other.CompareTag("Tank"))
+                if (other.CompareTag("Enemy"))
                 {
                     Debug.Log("Guided-Missile hit: " + other.name);
                 }
                 break;
             case BulletType.ArmorPiercing:
-                if (other.CompareTag("Tank"))
+                if (other.CompareTag("Enemy"))
                 {
                     Debug.Log("Armor-Piercing hit: " + other.name);
                 }

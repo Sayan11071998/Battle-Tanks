@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8506338046155901433}
   - component: {fileID: 8639333103666691168}
+  - component: {fileID: 3515741782792185886}
+  - component: {fileID: 1768967084467641584}
   m_Layer: 0
   m_Name: GuidedMissileBullet
   m_TagString: Untagged
@@ -45,8 +47,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8474985a75bba5d469be8c48d4e92112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1132176006263831855}
+  rb: {fileID: 1768967084467641584}
   renderer: {fileID: 8302305821295860243}
+--- !u!65 &3515741782792185886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266341925263880488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23825498, y: 0.24947536, z: 0.51539713}
+  m_Center: {x: -0.0004945025, y: -0.0009098649, z: 0.0036759675}
+--- !u!54 &1768967084467641584
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266341925263880488}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6178261035864548174
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,8 +108,6 @@ GameObject:
   - component: {fileID: 6798885056625524411}
   - component: {fileID: 7303108468918913027}
   - component: {fileID: 8302305821295860243}
-  - component: {fileID: 422959907547375715}
-  - component: {fileID: 1132176006263831855}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -132,53 +180,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &422959907547375715
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6178261035864548174}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4321873
-  m_Height: 1.9332645
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.004835844, z: -0.029486895}
---- !u!54 &1132176006263831855
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6178261035864548174}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0

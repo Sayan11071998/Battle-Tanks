@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 71506133721603668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 1.48, z: 1.312}
+  m_LocalPosition: {x: -0.013, y: 1.52, z: 1.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,9 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9d52cb38e8f93489da553233c15cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletViewPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
-  bulletList: []
+  bulletViewPrefab: {fileID: 8639333103666691168, guid: bf0f74611a91da140973bdf1a88bf347,
+    type: 3}
+  firePoint: {fileID: 431322674974611695}
+  bulletList:
+  - speed: 20
+    damage: 50
+    bulletType: 0
+    material: {fileID: 2100000, guid: c39933e60e73205419d1f79a2af1fdac, type: 2}
+    explosionRadius: 5
+  - speed: 15
+    damage: 80
+    bulletType: 1
+    material: {fileID: 2100000, guid: ff21ff0ea9b18924bb1fdfbb0e58f5cb, type: 2}
+    explosionRadius: 0
+  - speed: 0
+    damage: 0
+    bulletType: 0
+    material: {fileID: 0}
+    explosionRadius: 0
 --- !u!1001 &748660324510263387
 PrefabInstance:
   m_ObjectHideFlags: 0
