@@ -24,7 +24,8 @@ public class BulletSpawner : MonoBehaviour
 
     [SerializeField] private BulletView bulletViewPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private TankController tankController;
+    [SerializeField] private TankController tankController; // Player Tank
+    [SerializeField] private EnemyTankController enemyTankController;
 
     [SerializeField] private Bullet[] bulletList;
 
@@ -45,5 +46,12 @@ public class BulletSpawner : MonoBehaviour
         BulletController bulletController = new BulletController(bulletModel, bulletViewPrefab);
         Quaternion adjustedRotation = firePoint.rotation * Quaternion.Euler(0f, 0f, 0f);
         bulletController.SetPositionAndRotation(firePoint.position, adjustedRotation);
+    }
+
+    public void SpawnEnemyBullet(BulletType bulletType, Transform firePoint, Transform target = null)
+    {
+        this.firePoint = firePoint;
+        SpawnBullet(bulletType, target);
+        this.firePoint = null;
     }
 }
