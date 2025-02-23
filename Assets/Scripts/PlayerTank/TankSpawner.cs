@@ -8,30 +8,30 @@ public class TankSpawner : MonoBehaviour
     [System.Serializable]
     public class Tank
     {
-        public float movementSpeed;
-        public float rotationSpeed;
-        public TankType tankType;
-        public Material color;
+        [SerializeField] private float movementSpeed;
+        [SerializeField] private float rotationSpeed;
+        [SerializeField] private TankType tankType;
+        [SerializeField] private Material color;
+
+        public float MovementSpeed => movementSpeed;
+        public float RotationSpeed => rotationSpeed;
+        public TankType TankType => tankType;
+        public Material Color => color;
     }
 
-    public CameraController cam;
-    public List<Tank> tankList;
-    public TankView tankView;
-
-    // void Start()
-    // {
-    //     CreateTank();
-    // }
+    [SerializeField] private CameraController cam;
+    [SerializeField] private List<Tank> tankList;
+    [SerializeField] private TankView tankView;
 
     public void CreateTank(TankType tankType)
     {
         int index = (int)tankType;
         TankModel tankModel = new TankModel
         (
-            tankList[index].movementSpeed,
-            tankList[index].rotationSpeed,
-            tankList[index].tankType,
-            tankList[index].color
+            tankList[index].MovementSpeed,
+            tankList[index].RotationSpeed,
+            tankList[index].TankType,
+            tankList[index].Color
         );
 
         TankController tankController = new TankController(tankModel, tankView, cam);
