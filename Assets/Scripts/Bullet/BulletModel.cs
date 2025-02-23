@@ -6,13 +6,13 @@ public class BulletModel
 {
     private BulletController bulletController;
 
-    [SerializeField] private float speed;
-    [SerializeField] private float damage;
-    [SerializeField] private BulletType bulletType;
-    [SerializeField] private Material material;
-    [SerializeField] private float explosionRadius;
-    [SerializeField] private Transform target;
-    [SerializeField] private float lifetime;
+    private float speed;
+    private float damage;
+    private BulletType bulletType;
+    private Material material;
+    private float explosionRadius;
+    private Transform target;
+    private float lifetime;
 
     public BulletModel
     (

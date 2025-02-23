@@ -4,10 +4,10 @@ public class TankModel
 {
     private TankController tankController;
 
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private TankType tanktype;
-    [SerializeField] private Material color;
+    private float movementSpeed;
+    private float rotationSpeed;
+    private TankType tanktype;
+    private Material color;
 
     public TankModel(float _movement, float _rotation, TankType _tankType, Material _color)
     {
