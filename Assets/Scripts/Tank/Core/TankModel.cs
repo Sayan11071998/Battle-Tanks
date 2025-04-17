@@ -46,10 +46,3 @@ public abstract class TankModel : MonoBehaviour
         nextFireTime = Time.time + 1f / fireRate;
     }
 }
-
-public enum BulletType
-{
-    ArmorPiercing,
-    HighExplosive,
-    GuidedMissile
-}
